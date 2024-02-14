@@ -2,26 +2,43 @@
 // Include database connection
 include 'db_connection.php';
 
+// Start the session
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    // Redirect to the login page or display an error message
+    header("Location: login.php");
+    exit();
+}
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
-    $session_id = mysqli_real_escape_string($conn, $_POST['session_id']);
-    // Retrieve other form data
+    $session_id = $_POST['session_id'];
+    $dive_duration = $_POST['dive_duration'];
+    $dive_depth = $_POST['dive_depth'];
+    $location = $_POST['location'];
+    $notes = $_POST['notes'];
 
     // Update training session in the database
-    $sql = "UPDATE training_sessions SET dive_duration = '$dive_duration', dive_depth = '$dive_depth', location = '$location', notes = '$notes' WHERE session_id = '$session_id'";
-    if (mysqli_query($conn, $sql)) {
+    $update_sql = "UPDATE training_sessions SET dive_duration = '$dive_duration', dive_depth = '$dive_depth', location = '$location', notes = '$notes' WHERE session_id = '$session_id'";
+
+    if (mysqli_query($conn, $update_sql)) {
         // Redirect back to dashboard with success message
-        header("Location: dashboard.php?success=2");
+        $_SESSION['success_message'] = "Session updated successfully.";
+        header("Location: dashboard.php");
         exit();
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        // Handle database update error
+        echo "Error updating session: " . mysqli_error($conn);
     }
 }
 
 // Close database connection
 mysqli_close($conn);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

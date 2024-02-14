@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 mysqli_close($conn);
 ?>
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
 
     <head>
@@ -47,7 +47,7 @@ mysqli_close($conn);
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     </head>
 
-    <body class="bg-gray-100">
+    <body class="bg-blue-500">
         <div class="container mx-auto px-4 py-8">
             <h2 class="text-xl font-bold mb-4">Add New Session</h2>
             <form action="add_session_process.php" method="post">
@@ -76,7 +76,7 @@ mysqli_close($conn);
                     <textarea id="notes" name="notes" rows="3"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
                 </div>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add
+                <button type="submit" class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add
                     Session</button>
             </form>
         </div>

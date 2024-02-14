@@ -8,14 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-blue-500">
     <div class="flex justify-between items-center p-4 ocean-bg">
-        <h1 class="text-2xl font-bold ocean-text">Freediving Training Log</h1>
+        <h1 class="text-2xl font-bold text-white">Freediving Training Log</h1>
         <a href="register.php" class="text-white text-sm">Register</a>
     </div>
     <div class="flex justify-center items-center h-screen">
-        <div class="w-full max-w-xs">
-            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="w-full max-w-md">
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 login-card">
                 <h2 class="text-xl mb-4 ocean-text">Login</h2>
                 <form action="login.php" method="post" class="mb-4">
                     <div class="mb-4">
@@ -38,9 +38,12 @@
                             Password?</a>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
+    <footer class="flex justify-center items-center h-20 ocean-bg">
+        <p class="text-white">Footer Content</p>
+    </footer>
 </body>
+
 </html>

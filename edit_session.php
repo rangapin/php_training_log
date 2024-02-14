@@ -70,10 +70,10 @@ mysqli_close($conn);
     <title>Edit Session - Freediving Training Log</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-blue-500">
     <div class="container mx-auto px-4 py-8">
         <h2 class="text-xl font-bold mb-4">Edit Training Session</h2>
-        <form action="edit_session.php" method="post">
+        <form action="update_session.php" method="post">
             <!-- Input fields for editing session details -->
             <div class="mb-4">
                 <label for="dive_duration" class="block text-gray-700 text-sm font-bold mb-2">Dive Duration (seconds)</label>
@@ -99,7 +99,7 @@ mysqli_close($conn);
             <input type="hidden" name="session_id" value="<?php echo htmlspecialchars($session['session_id']); ?>">
 
             <!-- Submit button for updating session -->
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update Session</button>
+            <button type="submit" class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Update Session</button>
         </form>
     </div>
 </body>
