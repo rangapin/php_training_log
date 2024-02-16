@@ -43,7 +43,7 @@ mysqli_close($conn);
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<div class='bg-white shadow-md rounded p-4 mb-4'>";
                 echo "<p><strong>Date:</strong> " . $row['session_date'] . "</p>";
-                echo "<p><strong>Dive Duration:</strong> " . $row['dive_duration'] . " seconds</p>";
+                echo "<p><strong>Dive Duration:</strong> " . $row['dive_duration'] . " minutes</p>";
                 echo "<p><strong>Dive Depth:</strong> " . $row['dive_depth'] . " meters</p>";
                 echo "<p><strong>Location:</strong> " . $row['location'] . "</p>";
                 echo "<p><strong>Notes:</strong> " . $row['notes'] . "</p>";

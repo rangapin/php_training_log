@@ -54,14 +54,14 @@ mysqli_close($conn);
                 <div class="mb-4">
                     <label for="dive_duration" class="block text-gray-700 text-sm font-bold mb-2">Dive Duration
                         (seconds)</label>
-                    <input type="number" id="dive_duration" name="dive_duration"
+                    <input type="number" step="0.01" id="dive_duration" name="dive_duration"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         required>
                 </div>
                 <div class="mb-4">
                     <label for="dive_depth" class="block text-gray-700 text-sm font-bold mb-2">Dive Depth
                         (meters)</label>
-                    <input type="number" id="dive_depth" name="dive_depth"
+                    <input type="number" step="0.01" id="dive_depth" name="dive_depth"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         required>
                 </div>

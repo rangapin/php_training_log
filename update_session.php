@@ -16,8 +16,9 @@ if (!isset($_SESSION['user_id'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
     $session_id = $_POST['session_id'];
-    $dive_duration = $_POST['dive_duration'];
-    $dive_depth = $_POST['dive_depth'];
+    $dive_duration = floatval($_POST['dive_duration']);
+    $dive_depth = floatval($_POST['dive_depth']);
+    
     $location = $_POST['location'];
     $notes = $_POST['notes'];
 
@@ -53,14 +54,14 @@ mysqli_close($conn);
 <body class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
         <h2 class="text-xl font-bold mb-4">Update Training Session</h2>
-        <form action="update_session_process.php" method="post">
+        <form action="update_session.php" method="post">
             <!-- Hidden input for session ID -->
             <input type="hidden" name="session_id" value="<?php echo htmlspecialchars($session['session_id']); ?>">
             <div class="mb-4">
                 <label for="dive_duration" class="block text-gray-700 text-sm font-bold mb-2">Dive Duration
-                    (seconds)</label>
+                    (minutes)</label>
                 <input type="number" id="dive_duration" name="dive_duration"
-                    value="<?php echo htmlspecialchars($session['dive_duration']); ?>"
+                    value="<?php echo ($session['dive_duration']); ?>"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     required>
             </div>
@@ -90,3 +91,4 @@ mysqli_close($conn);
 </body>
 
 </html>
+
