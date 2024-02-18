@@ -29,10 +29,11 @@ mysqli_close($conn);
     <title>Dashboard - Freediving Training Log</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-blue-500">
+<body class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
-        <h2 class="text-xl font-bold mb-4">My Training Sessions</h2>
-        <a href="add_session.php" class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block">Add New Session</a>
+        <h2 class="text-2xl font-bold mb-4">My Training Sessions</h2>
+        <a href="add_session.php" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block">Add New Session</a>
+        <a href="dashboard.php" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block">Dashboard</a>
         
         <div class="mb-8"></div> <!-- Space between button and sessions -->
         

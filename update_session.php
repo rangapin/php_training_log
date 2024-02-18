@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $session_id = $_POST['session_id'];
     $dive_duration = floatval($_POST['dive_duration']);
     $dive_depth = floatval($_POST['dive_depth']);
-    
     $location = $_POST['location'];
     $notes = $_POST['notes'];
 
